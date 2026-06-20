@@ -1,17 +1,17 @@
 import streamlit as st
-from prometheus_client import Counter
-from prometheus_client import start_http_server
 
-# Start metrics server
-start_http_server(8000)
+try:
+    from prometheus_client import Counter
 
-# KPI Counter
-REQUEST_COUNT = Counter(
-    "retailpulse_requests_total",
-    "Total Dashboard Visits"
-)
+    REQUEST_COUNT = Counter(
+        "streamlit_requests_total",
+        "Total Streamlit Requests"
+    )
 
-REQUEST_COUNT.inc()
+    REQUEST_COUNT.inc()
+
+except Exception:
+    pass
 
 st.set_page_config(
     page_title="RetailPulse",
