@@ -10,3 +10,4 @@ seaborn
 statsmodels
 optuna
 openpyxl
+prometheus-client
